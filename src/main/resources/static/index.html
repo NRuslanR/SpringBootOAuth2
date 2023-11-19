@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Demo</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webjars/js-cookie/js.cookie.js"></script>
+    <script type="text/javascript" src="/js/request-pre-processing.js"></script>
+    <script type="text/javascript" src="/js/authentication-ui.js"></script>
+</head>
+<body>
+	<div class="header">
+		<h1>OAuth2 Authentication Example</h1>
+	</div>
+	<div class="login">
+		<a href="/login.html">Login</a>
+	</div>
+	<div class="container authenticated">
+		You logged as <b><i><span id="login"></span></i></b>
+		<br />
+		<div>
+			<label>Email:</label>&nbsp;
+			<b><span id="email"></span></b>
+		</div>
+		<div>
+			<label>Name:</label>&nbsp;
+			<b><span id="name"></span></b>
+		</div>
+		<div>
+			<label>Bio:</label>&nbsp;
+			<b><span id="bio"></span></b>
+		</div>
+		<div>
+			<label>Location:</label>&nbsp;
+			<b><span id="location"></span></b>
+		</div>
+		<button onclick="logoutCurrentUser()">Logout</button>
+	</div>
+	<div class="container text-danger error"></div>
+	
+	<script type="text/javascript">
+		updatePageByAuthenticationStatus()
+	</script>
+</body> 
+</html>
